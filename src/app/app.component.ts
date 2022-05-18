@@ -6,9 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Password Generator';
+  _password = '';
 
-  onButtonClick = () => {
-    console.log('On Button clicked');
+  get password() {
+    return this._password; 
+  }
+
+  set password(value: string) {
+     this._password = value;
+   }
+
+   onButtonClick = () => {
+    this.password = 'Random String';
   };
 }
