@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   private _useLetters: boolean = false;
-  private _useNumber: boolean = false;
-  private _useSymbol: boolean = false;
+  private _useNumbers: boolean = false;
+  private _useSymbols: boolean = false;
   private _password: string = '';
 
   get password() {
@@ -28,19 +28,19 @@ export class AppComponent {
   }
 
   get useNumbers() {
-    return this._useNumber;
+    return this._useNumbers;
   }
 
   set useNumbers(value: boolean) {
-    this._useNumber = value;
+    this._useNumbers = value;
   }
 
   get useSymbols() {
-    return this._useSymbol;
+    return this._useSymbols;
   }
 
   set useSymbols(value: boolean) {
-    this._useSymbol = value;
+    this._useSymbols = value;
   }
 
   onButtonClick = () => {
