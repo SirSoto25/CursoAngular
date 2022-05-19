@@ -2,7 +2,10 @@
 
 <div>
   <label>Entrer Length</label>
-  <input type="number" />
+  <input
+    (input)="onChangeLength($event.target)"
+    [value]="_passwordLength"
+    type="number" />
 </div>
 
 <div>

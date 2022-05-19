@@ -10,6 +10,7 @@ export class AppComponent {
   private _useNumbers: boolean = false;
   private _useSymbols: boolean = false;
   private _password: string = '';
+  _passwordLength: number = 0;
 
   get password() {
     return this._password;
@@ -41,6 +42,10 @@ export class AppComponent {
 
   set useSymbols(value: boolean) {
     this._useSymbols = value;
+  }
+
+  onChangeLength(value: any) {
+    this._passwordLength = value.value;
   }
 
   onButtonClick = () => {
