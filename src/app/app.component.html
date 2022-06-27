@@ -6,7 +6,7 @@
       <div class="field">
         <label>Length</label>
         <input
-          class="input"
+          class="input is-info"
           (input)="passwordLength = $any($event.target).value"
           type="number" />
       </div>
@@ -43,13 +43,13 @@
           !(passwordLength && (useLetters || useSymbols || useNumbers))
         "
         (click)="onButtonClick()"
-        class="button is-link is-fullwidth">
+        class="button is-success is-fullwidth">
         Generate!
       </button>
 
-      <div class="box" *ngIf="password">
+      <div class="box" *ngIf="password !== ''">
         <label>Your Password</label>
-        <input class="input" [value]="password" disabled="disabled" />
+        <input class="input is-danger" [value]="password" disabled="disabled" />
       </div>
     </div>
   </div>
