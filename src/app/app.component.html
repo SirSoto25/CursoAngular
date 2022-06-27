@@ -1,34 +1,56 @@
-<h1>Password Generator</h1>
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Password Generator</h1>
 
-<div>
-  <label>Entrer Length</label>
-  <input (input)="passwordLength = $any($event.target).value" type="number" />
-</div>
+      <div class="field">
+        <label>Length</label>
+        <input
+          class="input"
+          (input)="passwordLength = $any($event.target).value"
+          type="number" />
+      </div>
 
-<div>
-  <label>Use Letters</label>
-  <input (change)="useLetters = !useLetters" type="checkbox" />
-</div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="useLetters = !useLetters" type="checkbox" />
+            Use Letters
+          </label>
+        </div>
+      </div>
 
-<div>
-  <label>Use Numbers</label>
-  <input (change)="useNumbers = !useNumbers" type="checkbox" />
-</div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="useNumbers = !useNumbers" type="checkbox" />
+            Use Numbers
+          </label>
+        </div>
+      </div>
 
-<div>
-  <label>Use Symbols</label>
-  <input (change)="useSymbols = !useSymbols" type="checkbox" />
-</div>
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input (change)="useSymbols = !useSymbols" type="checkbox" />
+            Use Symbols
+          </label>
+        </div>
+      </div>
 
-<div>
-  <button
-    [disabled]="!(passwordLength && (useLetters || useNumbers || useSymbols))"
-    (click)="onButtonClick()">
-    Generate!
-  </button>
-</div>
+      <button
+        [disabled]="
+          !(passwordLength && (useLetters || useSymbols || useNumbers))
+        "
+        (click)="onButtonClick()"
+        class="button is-link is-fullwidth">
+        Generate!
+      </button>
 
-<div>
-  <label>Your Password</label>
-  <input [value]="password" disabled="disabled" />
+      <div class="box">
+        <label>Your Password</label>
+        <input class="input" [value]="password" disabled="disabled" />
+      </div>
+    </div>
+  </div>
 </div>
